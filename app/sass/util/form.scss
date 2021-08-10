@@ -1,0 +1,126 @@
+%textinput {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  //   border: 1px solid;
+  //   background-color: ;
+  //   color: ;
+}
+
+%radio {
+  position: relative;
+
+  & input[type="radio"] {
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    width: 1em;
+    opacity: 0;
+
+    & + label {
+      display: block;
+      margin-left: 1.5em;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: em(18px, 16px);
+        height: em(18px, 16px);
+        //  background-color:;
+        //  border: 1px solid;
+        border-radius: 50%;
+      }
+    }
+
+    &:hover {
+      & + label:before {
+        content: "";
+        // background-color: ;
+      }
+    }
+
+    &:checked {
+      & + label:before {
+        width: em(12px, 16px);
+        height: em(12px, 16px);
+        //  border: 3px solid;
+        // background: $;
+        background-size: em(18px, 16px);
+        // box-shadow: 0 0 0 1px rgba($, 0.4);
+      }
+    }
+
+    &:focus {
+      & + label:before {
+        //  border: 1px solid;
+        // box-shadow: 0 0 0 2px $;
+      }
+
+      &:checked {
+        & + label:before {
+          //  border: 3px solid;
+          // box-shadow: 0 0 0 2px $;
+        }
+      }
+    }
+  }
+}
+
+%checkbox {
+  position: relative;
+
+  & input[type="checkbox"] {
+    left: 0;
+    position: absolute;
+    cursor: pointer;
+    height: 1em;
+    width: 1em;
+    opacity: 0;
+
+    & + label {
+      display: block;
+      margin-left: 1.5em;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: em(18px, 16px);
+        height: em(18px, 16px);
+        // background-color: ;
+        // border-bottom: 1px solid $;
+      }
+
+      & + .description {
+        margin-left: 1.5em;
+      }
+    }
+
+    &:hover {
+      & + label:before {
+        content: "";
+        // background-color: ;
+      }
+    }
+
+    &:focus {
+      & + label:before {
+        content: "";
+        // outline: 2px solid;
+        outline-offset: -1px;
+      }
+    }
+
+    &:checked {
+      & + label:before {
+        // background: $ url("../iconen/check.svg") center no-repeat;
+        background-size: em(14px, 16px);
+        // border-bottom: 1px solid ;
+      }
+    }
+  }
+}

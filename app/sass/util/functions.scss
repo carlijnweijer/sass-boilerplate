@@ -1,0 +1,14 @@
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) 1rem;
+}
+
+/*
+--- example ---
+h1 {
+    font-size: rem(32);
+}
+results in
+h1 {
+    font-size: 2rem;
+} 
+ */

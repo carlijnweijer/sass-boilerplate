@@ -1,0 +1,31 @@
+$breakpoints: (
+  "mini": "480px",
+  "small": "700px",
+  "medium": "1000",
+  "big": "1240px",
+  "bigger": "1366px",
+  "huge": "1440px",
+);
+
+@mixin responsiveMax($size) {
+  @media only screen and (max-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}
+
+@mixin responsiveMin($size) {
+  @media only screen and (min-width: map-get($breakpoints, $size) + 1px) {
+    @content;
+  }
+}
+
+@mixin responsiveMinMax($sizeMin, $sizeMax) {
+  @media only screen and (min-width: map-get($breakpoints, $sizeMin)) and (max-width: map-get($breakpoints, $sizeMax)) {
+    @content;
+  }
+}
+
+//example:
+// @include responsiveMax(large){
+//     font-size: 3rem;
+// }
