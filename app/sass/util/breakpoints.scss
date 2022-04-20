@@ -1,20 +1,27 @@
-$breakpoints: (
-  "mini": "480px",
-  "small": "700px",
-  "medium": "1000",
-  "big": "1240px",
-  "bigger": "1366px",
-  "huge": "1440px",
+$breakpoints-max: (
+  "phone": "480px",
+  "tablet": "768px",
+  "laptop": "1024px",
+  "desktop": "1280px",
+  "big": "1440px",
+);
+
+$breakpoints-min: (
+  "phone": "320px",
+  "tablet": "481px",
+  "laptop": "769px",
+  "desktop": "1025px",
+  "big": "1441px",
 );
 
 @mixin responsiveMax($size) {
-  @media only screen and (max-width: map-get($breakpoints, $size)) {
+  @media only screen and (max-width: map-get($breakpoints-max, $size)) {
     @content;
   }
 }
 
 @mixin responsiveMin($size) {
-  @media only screen and (min-width: map-get($breakpoints, $size) + 1px) {
+  @media only screen and (min-width: map-get($breakpoints-min, $size)) {
     @content;
   }
 }
@@ -24,8 +31,3 @@ $breakpoints: (
     @content;
   }
 }
-
-//example:
-// @include responsiveMax(large){
-//     font-size: 3rem;
-// }

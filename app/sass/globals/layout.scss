@@ -1,49 +1,51 @@
-@use '../util' as *;
+@use "../util" as *;
 
-:root {
-  --page-width: 1170px;
-}
+$page-width: 1170px;
 
-%pagewidth {
-  max-width: var(--page-width);
-  margin-right: auto;
-  margin-left: auto;
+@mixin pagewidth {
+  max-width: $page-width;
+  padding-left: 25px;
+  padding-right: 25px;
 
-  @include responsiveMax(huge) {
-    padding-right: 100px;
-    padding-left: 100px;
-  }
-
-  @include responsiveMax(big) {
-    padding-left: 75px;
-    padding-right: 75px;
-  }
-
-  @include responsiveMax(small) {
+  @include responsiveMin(tablet) {
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  @include responsiveMax(mini) {
-    padding-left: 25px;
-    padding-right: 25px;
+  @include responsiveMin(laptop) {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
+
+  @include responsiveMin(desktop) {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
+  @include responsiveMin(big) {
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
-%fullwidth {
+@mixin fullwidth {
   width: 100vw;
-  margin-left: calc((-100vw + var(--page-width)) / 2);
 
-  @include responsiveMax(huge) {
-    margin-left: -100px;
-  }
-  @include responsiveMax(big) {
-    margin-left: -75px;
-  }
-  @include responsiveMax(small) {
+  margin-left: -25px;
+
+  @include responsiveMin(tablet) {
     margin-left: -50px;
   }
-  @include responsiveMax(mini) {
-    margin-left: -25px;
+
+  @include responsiveMin(laptop) {
+    margin-left: -75px;
+  }
+
+  @include responsiveMin(desktop) {
+    margin-left: -100px;
+  }
+
+  @include responsiveMin(big) {
+    margin-left: calc((-100vw + $page-width) / 2);
   }
 }

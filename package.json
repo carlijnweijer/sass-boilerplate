@@ -1,0 +1,24 @@
+{
+  "name": "sass-boilerplate",
+  "version": "1.0.0",
+  "description": "boilerplate for sass",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-dev": "sass --watch --update --style=expanded app/sass/style.scss:app/css/style.css",
+    "sass-prod": "sass --no-source-map --style=compressed app/sass/style.scss:app/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlijnweijer/sass-boilerplate.git"
+  },
+  "author": "Carlijn van de Weijer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carlijnweijer/sass-boilerplate/issues"
+  },
+  "homepage": "https://github.com/carlijnweijer/sass-boilerplate#readme",
+  "dependencies": {
+    "sass": "^1.50.1"
+  }
+}
